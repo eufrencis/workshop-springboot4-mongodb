@@ -3,4 +3,13 @@ GET http://localhost:8080/users
 
 ###
 
-GET http://localhost:8080/users/6987ba60149628c156a7e5
+GET http://localhost:8080/users/698a2067c521483e3ea99201
+
+### Criar um novo usuário
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Jose Bonifacio",
+  "email": "jose@gmail.com"
+}

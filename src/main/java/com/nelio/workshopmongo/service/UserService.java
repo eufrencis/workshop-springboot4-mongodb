@@ -2,6 +2,7 @@ package com.nelio.workshopmongo.service;
 
 
 import com.nelio.workshopmongo.domain.User;
+import com.nelio.workshopmongo.dto.UserDTO;
 import com.nelio.workshopmongo.repository.UserRepository;
 import com.nelio.workshopmongo.service.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -24,5 +25,13 @@ public class UserService {
     public User findById(String id){
         Optional <User> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto nao econtrado"));
+    }
+
+    public User insert (User user){
+        return repo.insert(user);
+    }
+
+    public User fromDTO (UserDTO objDTO){
+        return new User (objDTO.getId(), objDTO.getName(), objDTO.getEmail());
     }
 }
