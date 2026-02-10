@@ -52,6 +52,13 @@ public class UserResource {
         return ResponseEntity.created(uri).body(new UserDTO(obj)); // Retorna um novo user Dto ja com Id para o front
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete (@PathVariable  String id){
+        service.delete(id);
+        return  ResponseEntity.noContent().build();
+
+    }
+
 
 
 }

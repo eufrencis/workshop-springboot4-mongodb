@@ -13,3 +13,6 @@ Content-Type: application/json
   "name": "Jose Bonifacio",
   "email": "jose@gmail.com"
 }
+
+###
+DELETE http://localhost:8080/users/698b7fa1691ab241e9c106c4
