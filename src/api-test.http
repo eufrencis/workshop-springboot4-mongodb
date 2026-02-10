@@ -3,7 +3,7 @@ GET http://localhost:8080/users
 
 ###
 
-GET http://localhost:8080/users/698a2067c521483e3ea99201
+GET http://localhost:8080/users/698b9213ccec680ebee10307
 
 ### Criar um novo usuário
 POST http://localhost:8080/users
@@ -16,3 +16,12 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8080/users/698b7fa1691ab241e9c106c4
+
+### Atualizar um usuário existente
+PUT http://localhost:8080/users/698b949bf4f84bf541072bf1
+Content-Type: application/json
+
+{
+  "name": "Maria Silva Sauro",
+  "email": "maria.nova@gmail.com"
+}
