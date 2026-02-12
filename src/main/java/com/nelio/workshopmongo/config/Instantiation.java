@@ -2,6 +2,7 @@ package com.nelio.workshopmongo.config;
 
 import com.nelio.workshopmongo.domain.Post;
 import com.nelio.workshopmongo.domain.User;
+import com.nelio.workshopmongo.dto.AuthorDTO;
 import com.nelio.workshopmongo.repository.PostRepository;
 import com.nelio.workshopmongo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -44,10 +45,10 @@ public class Instantiation implements CommandLineRunner {
 
 
         Post post1 = Post.builder().date(LocalDate.of(2018, 3, 21))
-                .title("Partiu viagem").body("Vou viajar para São Paulo. Abraços!").author(maria).build();
+                .title("Partiu viagem").body("Vou viajar para São Paulo. Abraços!").author(new AuthorDTO(maria)).build();
 
         Post post2 = Post.builder().date(LocalDate.of(2018, 3,23))
-                .title("Bom dia").body("Acordei feliz hj").author(maria).build();
+                .title("Bom dia").body("Acordei feliz hj").author(new AuthorDTO(maria)).build();
 
         postRepository.saveAll(Arrays.asList(post1, post2));
 
