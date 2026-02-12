@@ -50,10 +50,15 @@ public class UserService {
     }
 
     public User fromDTO(UserDTO objDTO) {
-        return new User(objDTO.getId(), objDTO.getName(), objDTO.getEmail());
+        return User.builder()
+                .id(objDTO.getId())
+                .name(objDTO.getName())
+                .email(objDTO.getEmail())
+                .build(); // A lista de posts nasce vazia e segura!
+    }
     }
 
-}
+
 
 
 

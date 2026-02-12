@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@Document
+@Document(collection = "post")
 public class Post implements Serializable {
 
     @Serial
