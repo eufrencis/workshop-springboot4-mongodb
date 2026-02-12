@@ -1,12 +1,13 @@
 package com.nelio.workshopmongo.domain;
 
+import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
-
+@Builder
 @Document //Mostra que é uma coleção do mongoDb
 public class User implements Serializable {
 
