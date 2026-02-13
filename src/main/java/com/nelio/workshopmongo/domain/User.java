@@ -29,6 +29,11 @@ public class User implements Serializable {
     private String name;
     private String email;
 
+    /* * @Builder.Default:
+     * Garante que o Lombok Builder respeite a inicialização 'new ArrayList<>()'.
+     * Sem essa anotação, o Builder ignoraria o valor padrão e deixaria a lista como 'null',
+     * o que causaria um NullPointerException ao tentar usar o método .getPosts().add().
+     */
     @Builder.Default
     @DBRef(lazy = true) // simula uma chave estrangeira e o lazy e para nao carregar os posts diretamente ao buscar users
     private List<Post> posts = new ArrayList<>();

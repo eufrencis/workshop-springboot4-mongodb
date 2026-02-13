@@ -1,5 +1,6 @@
 package com.nelio.workshopmongo.resources;
 
+import com.nelio.workshopmongo.domain.Post;
 import com.nelio.workshopmongo.domain.User;
 import com.nelio.workshopmongo.dto.UserDTO;
 import com.nelio.workshopmongo.service.UserService;
@@ -68,6 +69,14 @@ public class UserResource {
 
 
     }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity <List<Post>> findPosts (@PathVariable String id){
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body((obj.getPosts()));
+    }
+
+
 
 
 

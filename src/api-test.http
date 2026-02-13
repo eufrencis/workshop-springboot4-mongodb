@@ -3,7 +3,7 @@ GET http://localhost:8080/users
 
 ###
 
-GET http://localhost:8080/users/698b9213ccec680ebee10307
+GET http://localhost:8080/users
 
 ### Criar um novo usuário
 POST http://localhost:8080/users
@@ -25,3 +25,7 @@ Content-Type: application/json
   "name": "Maria Silva Sauro",
   "email": "maria.nova@gmail.com"
 }
+
+###
+
+GET http://localhost:8080/users/698f21c8e68c0179a747b0b5/posts
