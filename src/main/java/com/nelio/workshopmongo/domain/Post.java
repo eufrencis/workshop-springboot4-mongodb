@@ -1,6 +1,7 @@
 package com.nelio.workshopmongo.domain;
 
 import com.nelio.workshopmongo.dto.AuthorDTO;
+import com.nelio.workshopmongo.dto.CommentDTO;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -8,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,5 +32,8 @@ public class Post implements Serializable {
     private String title;
     private String body;
     private AuthorDTO author;
+
+    @Builder.Default
+    private List<CommentDTO> comments = new ArrayList<>();
 
 }
