@@ -20,7 +20,12 @@ public class PostService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Post não encontrado"));
     }
 
-    public List<Post> findByTitlePost (String text){
+    /**
+     * Método de serviço que serve como ponte entre o controlador e o repositório.
+     * Recebe o texto de busca e solicita ao repositório a busca no banco de dados.
+     */
+
+    public List<Post> searchTitle(String text){
         return postRepository.findByTitleContainingIgnoreCase(text);
 
     }

@@ -5,12 +5,17 @@ import java.net.URLDecoder;
 
 public class URL {
 
-    public static String decodeParam(String text){
-        try{
-        return URLDecoder.decode(text, "UTF-8");
+    /**
+     * Classe utilitária para tratamento de parâmetros enviados via URL.
+     */
+    public static String decodeParam(String text) {
+        try {
+            // Decodifica o texto da URL (ex: transforma %20 em espaço, %40 em @).
+            // Necessário porque navegadores codificam caracteres especiais para trafegar na web.
+            return URLDecoder.decode(text, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-                return "";
-            }
+            // Se houver erro na decodificação (padrão de caracteres inválido), retorna vazio.
+            return "";
         }
     }
-
+}

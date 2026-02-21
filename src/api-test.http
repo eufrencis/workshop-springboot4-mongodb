@@ -37,4 +37,4 @@ GET http://localhost:8080/posts/698f28023f01d5092909e548
 
 ###
 
-GET http://localhost:8080/posts/titlesearch?text=bom%20dia
+GET http://localhost:8080/posts/titlesearch?text=aa
