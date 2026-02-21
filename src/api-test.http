@@ -34,3 +34,7 @@ GET http://localhost:8080/users/698f21c8e68c0179a747b0b5/posts
 ###
 
 GET http://localhost:8080/posts/698f28023f01d5092909e548
+
+###
+
+GET http://localhost:8080/posts/titlesearch?text=bom%20dia
