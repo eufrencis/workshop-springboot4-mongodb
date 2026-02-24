@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -41,4 +42,21 @@ public class PostResource {
         return ResponseEntity.ok().body(list);
     }
 
+    @GetMapping(value="/fullsearch")
+    public ResponseEntity<List<Post>> fullSearch(
+            @RequestParam(value="text", defaultValue="") String text,
+            @RequestParam(value="minDate", defaultValue="") String minDate,
+            @RequestParam(value="maxDate", defaultValue="") String maxDate) {
+
+        text = URL.decodeParam(text);
+
+        // Padrão antigo era new Date(0L), o novo é 01/01/1970
+        LocalDate min = URL.convertDate(minDate, LocalDate.of(1970, 1, 1));
+
+        // Padrão antigo era new Date(), o novo é LocalDate.now()
+        LocalDate max = URL.convertDate(maxDate, LocalDate.now());
+
+        List<Post> list = postService.fullSearch(text, min, max);
+        return ResponseEntity.ok().body(list);
+    }
 }

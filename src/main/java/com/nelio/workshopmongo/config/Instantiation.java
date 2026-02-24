@@ -53,7 +53,7 @@ public class Instantiation implements CommandLineRunner {
                 .title("Bom dia").body("Acordei feliz hj").author(new AuthorDTO(maria)).build();
 
         CommentDTO c1 = CommentDTO.builder().text("Boa viagem mano!").date(LocalDate.of(2018, 3,21)).author(new AuthorDTO(alex)).build();
-        CommentDTO c2 = CommentDTO.builder().text("Bom dia").date(LocalDate.of(2018,3, 22)).author(new AuthorDTO(bob)).build();
+        CommentDTO c2 = CommentDTO.builder().text("Aproveite").date(LocalDate.of(2018,3, 22)).author(new AuthorDTO(bob)).build();
         CommentDTO c3 = CommentDTO.builder().text("Tenha um ótimo dia").date(LocalDate.of(2018, 3, 23)).author(new AuthorDTO(alex)).build();
 
         post1.getComments().addAll(Arrays.asList(c1, c2));

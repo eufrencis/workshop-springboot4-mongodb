@@ -2,6 +2,8 @@ package com.nelio.workshopmongo.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 public class URL {
 
@@ -18,4 +20,13 @@ public class URL {
             return "";
         }
     }
+    public static LocalDate convertDate(String textDate, LocalDate defaultValue) {
+        try {
+            // O LocalDate já entende o formato "yyyy-MM-dd" por padrão!
+            return LocalDate.parse(textDate);
+        } catch (DateTimeParseException e) {
+            return defaultValue;
+        }
+    }
+
 }

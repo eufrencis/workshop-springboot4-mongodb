@@ -38,3 +38,7 @@ GET http://localhost:8080/posts/698f28023f01d5092909e548
 ###
 
 GET http://localhost:8080/posts/titlesearch?text=aa
+
+###
+
+GET http://localhost:8080/posts/fullsearch?text=aproveite&maxDate=2018-03-23
